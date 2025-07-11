@@ -114,17 +114,17 @@
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <sphere radius="0.06" />
+                <sphere radius="0.075" />
             </geometry>
             <material name="black" />
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <sphere radius="0.06" />
+                <sphere radius="0.075" />
             </geometry>
         </collision>
-        <xacro:inertial_sphere mass="0.5" radius="0.06">
+        <xacro:inertial_sphere mass="0.5" radius="0.075">
             <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:inertial_sphere>
     </link>
@@ -198,7 +198,6 @@
         <material>Gazebo/Black</material>
     </gazebo>
     -->
-
 
 
 </robot>
