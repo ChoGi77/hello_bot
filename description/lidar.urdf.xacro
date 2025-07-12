@@ -32,8 +32,8 @@
         
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>true</visualize>
-            <update_rate>20</update_rate>
+            <visualize>false</visualize>
+            <update_rate>100</update_rate>
             <ray>
                 <scan>
                     <horizontal>
@@ -54,7 +54,7 @@
                     <argument>~/out:=scan</argument>
                 </ros>
                 <output_type>sensor_msgs/LaserScan</output_type>
-                <frame_name>laser_frame</frame_name>
+                <frame_name>lidar_link</frame_name>
             </plugin>
         </sensor>
     </gazebo>
