@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- 무지개색 계열 -->
     <material name="red">
         <color rgba="1 0 0 1" />
     </material>
@@ -31,7 +30,6 @@
     </material>
 
 
-    <!-- 흑백/회색 계열 -->
     <material name="white">
         <color rgba="1 1 1 1" />
     </material>
@@ -53,7 +51,6 @@
     </material>
 
 
-    <!-- 금속/특수색 -->
     <material name="gold">
         <color rgba="1 0.84 0 1" />
     </material>
@@ -67,7 +64,6 @@
     </material>
 
 
-    <!-- 기타/파스텔/알파벳순 -->
     <material name="aqua">
         <color rgba="0 1 1 1" />
     </material>

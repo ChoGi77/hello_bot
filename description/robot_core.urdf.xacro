@@ -1,22 +1,18 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- 색상 정의 파일 포함 (Include color definitions) -->
     <xacro:include filename="color.urdf.xacro" />
     <xacro:include filename="inertia.urdf.xacro" />
 
-    <!-- 베이스 링크: 로봇의 기준 프레임 (Base link: robot reference frame) -->
     <link name="base_link">
     </link>
 
-    <!-- 베이스와 섀시를 연결하는 고정 조인트 (Fixed joint: base to chassis) -->
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link" />
         <child link="chassis_link" />
         <origin xyz="-0.3 0 0" rpy="0 0 0" />
     </joint>
 
-    <!-- 섀시 링크 (Chassis link: robot body) -->
     <link name="chassis_link">
         <visual>
             <origin xyz="0.3 0 0.075" rpy="0 0 0" />
@@ -40,7 +36,6 @@
         <material>Gazebo/White</material>
     </gazebo>
 
-    <!-- 좌측 뒷바퀴 조인트 (Left rear wheel joint) -->
     <joint name="left_rear_wheel_joint" type="continuous">
         <parent link="chassis_link" />
         <child link="left_rear_wheel_link" />
@@ -48,7 +43,6 @@
         <axis xyz="0 0 1" />
     </joint>
 
-    <!-- 좌측 뒷바퀴 링크 (Left rear wheel link) -->
     <link name="left_rear_wheel_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -72,7 +66,6 @@
         <material>Gazebo/Black</material>
     </gazebo>
 
-    <!-- 우측 뒷바퀴 조인트 (Right rear wheel joint) -->
     <joint name="right_rear_wheel_joint" type="continuous">
         <parent link="chassis_link" />
         <child link="right_rear_wheel_link" />
@@ -80,7 +73,6 @@
         <axis xyz="0 0 1" />
     </joint>
 
-    <!-- 우측 뒷바퀴 링크 (Right rear wheel link) -->
     <link name="right_rear_wheel_link">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -104,7 +96,6 @@
         <material>Gazebo/Black</material>
     </gazebo>
 
-    <!-- 전면 캐스터 휠 추가 (Front caster wheel) -->
     <joint name="front_caster_joint" type="fixed">
         <parent link="chassis_link" />
         <child link="front_caster_link" />
@@ -133,71 +124,5 @@
         <mu1 value="0.001" />
         <mu2 value="0.001" />
     </gazebo>
-
-    <!-- 앞바퀴(좌/우) 관련 부분 주석처리: XML 주석 중첩 오류 수정 -->
-    <!--
-    좌측 앞바퀴 조인트 (Left front wheel joint)
-    <joint name="left_front_wheel_joint" type="continuous">
-        <parent link="chassis_link" />
-        <child link="left_front_wheel_link" />
-        <origin xyz="0.45 0.15 0" rpy="-${pi/2} 0 0" />
-        <axis xyz="0 0 1" />
-    </joint>
-
-    좌측 앞바퀴 링크 (Left front wheel link)
-    <link name="left_front_wheel_link">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <cylinder radius="0.075" length="0.0375" />
-            </geometry>
-            <material name="black" />
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <cylinder radius="0.075" length="0.0375" />
-            </geometry>
-        </collision>
-        <xacro:inertial_cylinder mass="1.0" radius="0.075" length="0.0375">
-            <origin xyz="0 0 0" rpy="0 0 0" />
-        </xacro:inertial_cylinder>
-    </link>
-    <gazebo reference="left_front_wheel_link">
-        <material>Gazebo/Black</material>
-    </gazebo>
-
-    우측 앞바퀴 조인트 (Right front wheel joint)
-    <joint name="right_front_wheel_joint" type="continuous">
-        <parent link="chassis_link" />
-        <child link="right_front_wheel_link" />
-        <origin xyz="0.45 -0.15 0" rpy="-${pi/2} 0 0" />
-        <axis xyz="0 0 1" />
-    </joint>
-
-    우측 앞바퀴 링크 (Right front wheel link)
-    <link name="right_front_wheel_link">
-        <visual>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <cylinder radius="0.075" length="0.0375" />
-            </geometry>
-            <material name="black" />
-        </visual>
-        <collision>
-            <origin xyz="0 0 0" rpy="0 0 0" />
-            <geometry>
-                <cylinder radius="0.075" length="0.0375" />
-            </geometry>
-        </collision>
-        <xacro:inertial_cylinder mass="1.0" radius="0.075" length="0.0375">
-            <origin xyz="0 0 0" rpy="0 0 0" />
-        </xacro:inertial_cylinder>
-    </link>
-    <gazebo reference="right_front_wheel_link">
-        <material>Gazebo/Black</material>
-    </gazebo>
-    -->
-
 
 </robot>
