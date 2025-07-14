@@ -54,6 +54,14 @@ def generate_launch_description():
         arguments=["joint_broad"],
     )
 
+    teleop_twist_keyboard_node = Node(
+        package="teleop_twist_keyboard",
+        executable="teleop_twist_keyboard",
+        name="teleop_twist_keyboard",
+        remappings=[('/cmd_vel', '/diff_cont/cmd_vel_unstamped')],
+        output='screen',
+    )
+
     # Launch them all!
     return LaunchDescription([
         rsp,
